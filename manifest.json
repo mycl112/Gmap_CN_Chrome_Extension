@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Google Maps GL CN Fix",
+  "version": "1.2.0",
+  "description": "自动为Google Maps/Google地球添加gl=cn参数并刷新，适配中国地区",
+  "author": "mycl112",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://earth.google.com/*",
+        "https://www.google.com/maps/*",
+        "https://www.google.com.hk/maps/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "host_permissions": [
+    "https://earth.google.com/*",
+    "https://www.google.com/maps/*",
+    "https://www.google.com.hk/maps/*"
+  ],
+  "homepage_url": "https://github.com/mycl112/Gmap_CN_Chrome_Extension"
+}

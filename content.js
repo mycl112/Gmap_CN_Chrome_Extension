@@ -14,9 +14,25 @@
         }
     }
 
+    function shouldHandleUrl(url) {
+        const patterns = [
+            /^https?:\/\/earth\.google\.com\//i,
+            /^https?:\/\/www\.google\.com\/maps\//i,
+            /^https?:\/\/www\.google\.com\.hk\/maps\//i,
+            /^https?:\/\/maps\.google\.com\//i,
+            /^https?:\/\/maps\.google\.com\.hk\//i
+        ];
+        return patterns.some(pattern => pattern.test(url));
+    }
+
     function redirectWithGlCn() {
         try {
             const currentUrl = window.location.href;
+            
+            if (!shouldHandleUrl(currentUrl)) {
+                return;
+            }
+            
             const newUrl = addGlCnParameter(currentUrl);
             if (newUrl !== currentUrl) {
                 console.log("Google Maps添加gl=cn并刷新：", currentUrl, "->", newUrl);

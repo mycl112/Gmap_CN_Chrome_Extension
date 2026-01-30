@@ -14,7 +14,9 @@
       "matches": [
         "https://earth.google.com/*",
         "https://www.google.com/maps/*",
-        "https://www.google.com.hk/maps/*"
+        "https://www.google.com.hk/maps/*",
+        "https://maps.google.com/*",
+        "https://maps.google.com.hk/*"
       ],
       "js": ["content.js"],
       "run_at": "document_start"
@@ -23,7 +25,13 @@
   "host_permissions": [
     "https://earth.google.com/*",
     "https://www.google.com/maps/*",
-    "https://www.google.com.hk/maps/*"
+    "https://www.google.com.hk/maps/*",
+    "https://maps.google.com/*",
+    "https://maps.google.com.hk/*"
   ],
+  "permissions": [
+    "tabs"
+  ],
+
   "homepage_url": "https://github.com/mycl112/Gmap_CN_Chrome_Extension"
 }
